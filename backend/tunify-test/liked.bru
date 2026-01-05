@@ -1,0 +1,23 @@
+meta {
+  name: liked
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:5000/api/playlists/liked/<USER_ID>
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "song": {
+      "videoId": "abc123",
+      "title": "Test Song",
+      "artist": "Test Artist"
+    },
+    "action": "add"
+  }
+  
+}

@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-[#F8F3D9] dark:bg-[#3B362C] text-[#504B38] dark:text-[#F8F3D9];
+  }
+}
+
+@layer components {
+  input[type="range"] {
+    @apply bg-[#EBE5C2] dark:bg-[#504B38];
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    @apply w-3 h-3 bg-[#B9B28A] dark:bg-[#9B9477] rounded-full appearance-none cursor-pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    @apply w-3 h-3 bg-[#B9B28A] dark:bg-[#9B9477] rounded-full appearance-none cursor-pointer;
+  }
+  
+}
+.volume-slider {
+  background: linear-gradient(
+    to right,
+    #94875f 0%,
+    #94875f calc(var(--val, 0) * 100%),
+    #ebe5c2 calc(var(--val, 0) * 100%)
+  );
+  transition: background 0.2s ease-in-out;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  width: 5px;
+  background-color: #94875f;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0px;
+}
+
+.volume-slider::-moz-range-thumb {
+  height: 5px;
+  width: 5px;
+  background-color: #94875f;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+  .progress-bar {
+  background: linear-gradient(to right, #94875f 0%, #94875f 100%);
+  background-size: calc(var(--val, 0) * 100%) 100%;
+  background-repeat: no-repeat;
+  background-color: #ebe5c2;
+  transition: background-size 0.3s ease-in-out;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 10px;
+}
+
+/* Thumb styles unchanged */
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  background-color: #94875f;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0px; /* vertically center */
+}
+
+.progress-bar::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  background-color: #94875f;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.dark {
+  color-scheme: dark;
+}
+

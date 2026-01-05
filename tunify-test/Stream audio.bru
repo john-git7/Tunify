@@ -1,0 +1,11 @@
+meta {
+  name: Stream audio
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:5000/api/music/stream/YOUTUBE_VIDEO_ID
+  body: none
+  auth: inherit
+}

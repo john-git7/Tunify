@@ -1,0 +1,11 @@
+meta {
+  name: liked_songs
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:5000/api/playlists/liked/<USER_ID>
+  body: none
+  auth: inherit
+}
